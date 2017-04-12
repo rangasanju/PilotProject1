@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomePageActivity">
+<item
+    android:id="@+id/group1"
+    android:title="My Account">
+    <menu>
+    <item
+        android:id="@+id/fillyourbiodata"
+        android:icon="@drawable/ic_teacher"
+        android:title="Biodata"
+        android:checkable="true"
+        android:fontFamily="font_family_thin">
+
+    </item>
+
+
+    <item
+        android:id="@+id/viewbiodata"
+        android:icon="@mipmap/ic_library_books_black_24dp"
+        android:checkable="true"
+        android:title="View Biodata"
+
+        android:fontFamily="font_family_thin">
+
+    </item>
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:checkable="true"
+        android:title="Logout"
+        >
+    </item>
+    </menu></item>
+    <item
+        android:id="@+id/group2"
+        android:title="Contact Us">
+        <menu>
+            <item
+
+                android:id="@+id/call_us"
+                android:icon="@drawable/ic_bit_torrent"
+                android:checkable="true"
+                android:title="Call Us"
+                >
+            </item>
+            <item
+                android:id="@+id/write_us"
+                android:icon="@drawable/ic_beer"
+                android:checkable="true"
+                android:title="Write Us"
+                >
+            </item>
+            <item
+                android:id="@+id/chat_us"
+                android:icon="@mipmap/ic_library_books_black_24dp"
+                android:checkable="true"
+                android:title="Chat with us"
+                >
+            </item>
+        </menu>
+    </item>
+</menu>

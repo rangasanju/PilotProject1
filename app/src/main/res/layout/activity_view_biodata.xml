@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_view_biodata"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.bujo.pilotproject.ViewBiodata">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentTop="true">
+        <EditText
+            android:id="@+id/etfirstname"
+            android:hint="First Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutFirstName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/inputLayoutFirstName"
+        android:layout_below="@+id/inputLayoutFirstName">
+
+        <EditText
+            android:id="@+id/etlastname"
+            android:hint="Last Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutFathersName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutLastName"
+        android:layout_alignStart="@+id/inputLayoutLastName">
+
+        <EditText
+            android:id="@+id/etfathersname"
+            android:hint="Father's Name"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutMothersName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutFathersName"
+        android:layout_alignStart="@+id/inputLayoutFathersName">
+
+        <EditText
+            android:id="@+id/etmothersname"
+            android:hint="Mother's Name"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutdob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutMothersName"
+        android:layout_alignStart="@+id/inputLayoutMothersName">
+
+        <EditText
+            android:id="@+id/etdob"
+            android:hint="Date Of Birth"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+    android:id="@+id/inputLayoutpob"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/inputLayoutdob"
+    android:layout_alignStart="@+id/inputLayoutdob">
+
+    <EditText
+        android:id="@+id/etpob"
+        android:hint="Place Of Birth"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_above="@+id/inputLayoutLastName"
+        android:layout_alignParentStart="true"
+        />
+</android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutnationality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutpob"
+        android:layout_alignStart="@+id/inputLayoutpob">
+
+        <EditText
+            android:id="@+id/etnationality"
+            android:hint="Nationality"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutoccupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutnationality"
+        android:layout_alignStart="@+id/inputLayoutnationality">
+
+        <EditText
+            android:id="@+id/etoccupation"
+            android:hint="Nationality"
+            android:layout_width="324dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_above="@+id/inputLayoutLastName"
+            android:layout_alignParentStart="true"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+</RelativeLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="16dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/airplaneswork"
+    tools:context="com.example.bujo.pilotproject.MainActivity">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutEmailid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="265dp"
+        >
+    <EditText
+        android:id="@+id/email"
+        android:hint="Email Id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_above="@+id/inputLayoutPassword"
+        android:layout_alignParentStart="true"
+         />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+            android:text="LOG IN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:id="@+id/button"
+            tools:text="Sign In"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/inputLayoutPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputLayoutEmailid"
+        android:layout_alignStart="@+id/inputLayoutEmailid">
+
+    <EditText
+        android:id="@+id/password"
+        android:hint="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pilot Book"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textView1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Easing data entry!"
+        android:textColor="@color/colorAccent"
+        android:id="@+id/textView"
+        android:layout_below="@+id/textView1"
+        android:layout_alignStart="@+id/textView1" />
+
+</RelativeLayout>

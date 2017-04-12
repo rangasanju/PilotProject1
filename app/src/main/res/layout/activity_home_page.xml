@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/HomePageActivityBg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/bgimg"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.bujo.pilotproject.HomePageActivity">
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout">
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:id="@+id/aaaaaa"
+    android:orientation="vertical">
+
+
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/left_drawer"
+        app:menu="@menu/menu_main"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:theme="@style/NavigationDrawerStyle"
+        >
+    </android.support.design.widget.NavigationView>
+    <!--tools:targetApi="lollipop"-->
+</LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sss"
+        android:layout_below="@+id/aaaaaa"
+        android:orientation="vertical"
+        >
+
+        <include layout="@layout/my_toolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+        <TextView
+            android:id="@+id/text1"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:text="10 Best Things About Being an Airline Pilot!"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:textSize="17dp"
+            android:gravity="center_vertical"
+            android:text="1. Who Doesn’t Love to Travel?Traveling is one of the major perks of this career. As a pilot, you have opportunities to go to places you’ve never been! With free time between flights, pilots have the chance to explore new cities and spend time experiencing different cultures. No two work days will be the same, and that may be one of the best parts."
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text3"
+            android:textSize="17dp"
+            android:gravity="center_vertical"
+            android:text="2. You Can’t Beat the View! Not many people in the world can say they have an office in the clouds. Most pilots say it’s a view they never grow tired of. From witnessing thunderstorms form in distant clouds, to looking out at a vast, never-ending blue sky, it’s easy to see why."
+            android:textStyle="italic"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text4"
+            android:textSize="17dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="3. Travel Discounts for Family and Friends! While pilots travel often, it isn’t always fun to do alone. As a pilot, it is likely that you will have access to discounted (and sometimes free) plane tickets for family and friends, which means good deals on great vacations. And in addition to airfare, a number of hotels provide discounted prices as well!"
+            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text5"
+            android:textSize="17dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="4. Job Security. If you’re looking for a job with major job security, you’ve found it. The demand for pilots is soaring. In fact, experts estimate that the need for pilots has steadily surpassed the supply, and will continue to do so for years to come. With that in mind, there’s no better time to become a pilot.
+"            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text6"
+            android:textSize="17dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="5. Work Stays at Work. No one likes taking their work home with them, and aside from studying for annual tests, pilots leave their work in the plane. There’s nothing to take home once you finish your day and close that cock pit door. Which leaves for more time to explore the latest city of the week, spend time with the ones you love, or pick up a new hobby."
+            android:textStyle="italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</ScrollView>
+
+
+</android.support.v4.widget.DrawerLayout>
+</RelativeLayout>
