@@ -35,14 +35,13 @@
         android:layout_height="match_parent"
         android:id="@+id/left_drawer"
         app:menu="@menu/menu_main"
-
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        android:theme="@style/NavigationDrawerStyle"
 
         >
     </android.support.design.widget.NavigationView>
-    <!--      android:layout_gravity="start"
-    app:headerLayout="@layout/navigation_header"
-android:theme="@style/NavigationDrawerStyle"
-    tools:targetApi="lollipop"-->
+    <!--   tools:targetApi="lollipop"-->
 </LinearLayout>
 
 <!--
@@ -127,8 +126,8 @@ android:theme="@style/NavigationDrawerStyle"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-</ScrollView>-->
+</ScrollView>
 
-
+-->
 </android.support.v4.widget.DrawerLayout>
 </RelativeLayout>

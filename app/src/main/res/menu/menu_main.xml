@@ -8,7 +8,7 @@
         android:id="@+id/group1"
         android:title="My Account">
 
-        <group android:checkableBehavior="single">
+        <menu android:checkableBehavior="single">
             <item
                 android:id="@+id/fillyourbiodata"
                 android:icon="@drawable/ic_teacher"
@@ -30,12 +30,12 @@
                 android:title="Logout"
                 >
             </item>
-        </group></item>
+        </menu></item>
     <item
         android:id="@+id/group2"
         android:title="Contact Us"
         >
-        <group android:checkableBehavior="single">
+        <menu android:checkableBehavior="single">
             <item
 
                 android:id="@+id/call_us"
@@ -55,6 +55,6 @@
                 android:title="Chat with us"
                 >
             </item>
-        </group>
+        </menu>
     </item>
 </menu>

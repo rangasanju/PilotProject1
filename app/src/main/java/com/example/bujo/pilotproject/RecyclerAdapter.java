@@ -21,8 +21,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     private int[] images = {
             R.drawable.family_details,
-            R.drawable.injection,
-            R.drawable.family_details};
+            R.drawable.contact_details,
+            R.drawable.professional_details};
 
     private int[] images1 = {
 
@@ -51,7 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     int position = getAdapterPosition();
                     Snackbar.make(v, "Click detected on item " + position,Snackbar.LENGTH_LONG).setAction("Action", null).show();
                     if(position==0){
-                        v.getContext().startActivity(new Intent(v.getContext(),PersonalDetailsForm.class));
+                        v.getContext().startActivity(new Intent(v.getContext(),ViewBiodata.class));
                     }
                     if(position==1){
                         v.getContext().startActivity(new Intent(v.getContext(),FamilyDetailsForm.class));

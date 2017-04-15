@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,7 +20,9 @@ public class FillBiodata extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_demo);
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
+            getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+
 
         recyclerView =   (RecyclerView) findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(this);

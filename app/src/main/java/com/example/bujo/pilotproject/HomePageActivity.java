@@ -45,7 +45,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 //        setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
        // Drawable drawable = ResourcesCompat.getDrawable(getResources(),R.drawable.ic_menu_black_24dp,  null);
        // drawable = DrawableCompat.wrap(drawable);
        // DrawableCompat.setTint(drawable, Color.WHITE);
