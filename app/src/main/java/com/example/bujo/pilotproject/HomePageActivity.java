@@ -30,58 +30,62 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-        mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(mToolbar);
+        //toolbar icon and color
+  //      mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+//        setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+//        getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+       // Drawable drawable = ResourcesCompat.getDrawable(getResources(),R.drawable.ic_menu_black_24dp,  null);
+       // drawable = DrawableCompat.wrap(drawable);
+       // DrawableCompat.setTint(drawable, Color.WHITE);
+      //  getSupportActionBar().setHomeAsUpIndicator(drawable);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
-        navigationView.setNavigationItemSelectedListener(this);
+      }
 
-        Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_menu_black_24dp, null);
-        drawable = DrawableCompat.wrap(drawable);
-        DrawableCompat.setTint(drawable, Color.WHITE);
-        getSupportActionBar().setHomeAsUpIndicator(drawable);
-    }
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        Toast.makeText(this," Selected!",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this," ff!",Toast.LENGTH_SHORT).show();
         String title = (String) item.getTitle();
         Toast.makeText(HomePageActivity.this,title+" Selected!",Toast.LENGTH_SHORT).show();
-        if(title.equals("Fill Biodata"))
+        if(title.equals("Biodata"))
         {
             Toast.makeText(HomePageActivity.this,title,Toast.LENGTH_SHORT).show();
-
+            mDrawerLayout.closeDrawer(GravityCompat.START);
             Intent toy = new Intent(HomePageActivity.this,FillBiodata.class);
             startActivity(toy);
         }
-        else if(title.equals("View Biodata"))
+        else if(title.equals("View_Biodata"))
         {
-
             Intent toy = new Intent(HomePageActivity.this,ViewBiodata.class);
             startActivity(toy);
         }
-
         return true;
     }
-
 
 
 
     //function for click of drawer layout opening and closing
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(mToggle.onOptionsItemSelected(item)){
-            // findViewById(R.id.fillyourbiodata).setOnClickListener(new View);
+        Toast.makeText(this," Selected1!",Toast.LENGTH_SHORT).show();
 
+        if(mToggle.onOptionsItemSelected(item)){
+            mDrawerLayout.requestLayout();
+            // findViewById(R.id.fillyourbiodata).setOnClickListener(new View);
             return true;}
         return super.onOptionsItemSelected(item);
     }
@@ -89,6 +93,8 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
 
     public boolean onMenuItemClick(MenuItem item)
     {
+        Toast.makeText(this," Selected2!",Toast.LENGTH_SHORT).show();
+
         String title = (String) item.getTitle();
         Toast.makeText(HomePageActivity.this,title+" Selected!",Toast.LENGTH_SHORT).show();
         if(title.equals("fillyourbiodata"))
