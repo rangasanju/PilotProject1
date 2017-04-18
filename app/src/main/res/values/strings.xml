@@ -3,6 +3,9 @@
     <string name="signIn_Success">Welcome User!</string>
     <string name="incorrect_idPass">Incorrect email id or password!</string>
     <string name="blank_emailOrpassword">Email Id or password cannot be left blank"</string>
+    <string name="password_length">Password should be min 8 charecters long</string>
+    <string name="password_uniqueCharlength">Password must contain a special charecter,a number and capital letter!</string>
+    <string name="email_incorrect">Enter a valid email address</string>
     <string name="open">Open</string>
     <string name="close">close</string>
     <string name="action_settings">Settings</string>

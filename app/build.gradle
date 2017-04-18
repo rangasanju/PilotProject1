@@ -33,4 +33,5 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile files('libs/CircleImageView-master/gradle/wrapper/gradle-wrapper.jar')
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
 }

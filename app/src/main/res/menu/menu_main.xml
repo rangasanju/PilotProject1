@@ -46,7 +46,7 @@
             <item
                 android:id="@+id/write_us"
                 android:icon="@drawable/ic_beer"
-                android:title="Write Us"
+                android:title="Write_Us"
                 >
             </item>
             <item

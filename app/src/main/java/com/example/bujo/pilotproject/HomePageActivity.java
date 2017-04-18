@@ -3,6 +3,7 @@ package com.example.bujo.pilotproject;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
@@ -34,6 +35,7 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
@@ -72,6 +74,17 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         {
             Intent toy = new Intent(HomePageActivity.this,ViewBiodata.class);
             startActivity(toy);
+        }
+        else if(title.equals("Logout"))
+        {
+            Intent toy = new Intent(HomePageActivity.this,MainActivity.class);
+            startActivity(toy);
+        }
+        else if(title.equals("Write_Us"))
+        {
+            Intent contactIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.email_to), null));
+            contactIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
+            startActivity(Intent.createChooser(contactIntent, getString(R.string.email_chooser)));
         }
         return true;
     }

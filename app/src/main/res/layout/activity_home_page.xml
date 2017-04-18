@@ -41,7 +41,6 @@
 
         >
     </android.support.design.widget.NavigationView>
-    <!--   tools:targetApi="lollipop"-->
 </LinearLayout>
 
 <!--
