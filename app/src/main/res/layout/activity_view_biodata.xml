@@ -169,10 +169,19 @@
             android:src="@drawable/ic_beer"
             android:id="@+id/fab"/>
 
-       <!-- <WebView
-            android:layout_width="295dp"
-            android:layout_height="396dp"
-            android:id="@+id/webView"/>-->
+        <Button
+            android:text="Upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uploadButton"
+            android:layout_gravity="bottom|start"
+
+            />
+
+        <!-- <WebView
+             android:layout_width="295dp"
+             android:layout_height="396dp"
+             android:id="@+id/webView"/>-->
     </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>

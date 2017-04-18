@@ -40,7 +40,7 @@
 
                 android:id="@+id/call_us"
                 android:icon="@drawable/ic_bit_torrent"
-                android:title="Call Us"
+                android:title="Call_Us"
                 >
             </item>
             <item

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class ViewBiodata extends AppCompatActivity {
 
     private ProgressBar pb;
     FloatingActionButton fab;
+    Button bt;
 
 
     @Override
@@ -51,7 +53,8 @@ public class ViewBiodata extends AppCompatActivity {
         //getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.abs_layout);
-       // String myUrl="file://?android_asset/index.html";
+
+        // String myUrl="file://?android_asset/index.html";
         //WebView view = (WebView) this.findViewById(R.id.webView);
         //view.getSettings().setJavaScriptEnabled(true);
         //view.loadUrl(myUrl);
@@ -66,10 +69,22 @@ public class ViewBiodata extends AppCompatActivity {
             }
         }
         );
+
+        bt = (Button) findViewById(R.id.uploadButton);
+        bt.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View view)
+            {
+                Toast.makeText(getApplicationContext(), "upload pressed", Toast.LENGTH_LONG).show();
+                // setContentView(R.layout.camera_gallery_upload);
+                Intent toy = new Intent(ViewBiodata.this, UploadImage.class);
+                startActivity(toy);            }
+        }
+        );
+
         EditText etfirstname = (EditText) findViewById(R.id.etfirstname);
         new GetBARequest().execute();
     }
-
 
 
 
