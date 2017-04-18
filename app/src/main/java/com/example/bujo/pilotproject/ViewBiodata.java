@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.InputType;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -82,11 +83,46 @@ public class ViewBiodata extends AppCompatActivity {
         }
         );
 
-        EditText etfirstname = (EditText) findViewById(R.id.etfirstname);
+        setEditable(false,InputType.TYPE_NULL);
         new GetBARequest().execute();
     }
 
+public void setEditable(boolean value, int inputtype)
+{
+    EditText etfirstname = (EditText) findViewById(R.id.etfirstname);
+    etfirstname.setInputType(inputtype);
+    etfirstname.setFocusable(value);
 
+    EditText etlastname = (EditText) findViewById(R.id.etlastname);
+    etlastname.setInputType(inputtype);
+    etlastname.setFocusable(value);
+
+    EditText etfathersname = (EditText) findViewById(R.id.etfathersname);
+    etfathersname.setInputType(inputtype);
+    etfathersname.setFocusable(value);
+
+    EditText etmothersname = (EditText) findViewById(R.id.etmothersname);
+    etmothersname.setInputType(inputtype);
+    etmothersname.setFocusable(value);
+
+    EditText etdob = (EditText) findViewById(R.id.etdob);
+    etdob.setInputType(inputtype);
+    etdob.setFocusable(value);
+
+    EditText etpob = (EditText) findViewById(R.id.etpob);
+    etpob.setInputType(inputtype);
+    etpob.setFocusable(value);
+
+    EditText etnationality = (EditText) findViewById(R.id.etnationality);
+    etnationality.setInputType(inputtype);
+    etnationality.setFocusable(value);
+
+    EditText etoccupation = (EditText) findViewById(R.id.etoccupation);
+    etoccupation.setInputType(inputtype);
+    etoccupation.setFocusable(value);
+
+
+}
 
 
     class GetBARequest   extends AsyncTask<Void,Void,String> {
@@ -110,7 +146,7 @@ public class ViewBiodata extends AppCompatActivity {
                 // FIRING THE URL
                 System.out.println(" Check innnn   1: " );
                 HttpClient httpclient = new DefaultHttpClient();
-                HttpGet httpget = new HttpGet("http://192.168.1.102:8080/passws/biodata/P-101");
+                HttpGet httpget = new HttpGet("http://192.168.1.104:8080/passws/biodata/P-101");
                 System.out.println(" Check innnn   2: " );
 
 
