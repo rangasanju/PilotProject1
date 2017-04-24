@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void myFancyMethod() {
         boolean isValid = true;
-
+        Intent toy1 = new Intent(MainActivity.this, HomePageActivity.class);
+        startActivity(toy1);
         //for email chk
         String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);

@@ -3,6 +3,7 @@ package com.example.bujo.pilotproject;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -14,8 +15,12 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kosalgeek.android.photoutil.CameraPhoto;
+import com.kosalgeek.android.photoutil.ImageLoader;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import static com.example.bujo.pilotproject.R.id.imageView;
 
 /**
  * Created by Bujo on 4/18/2017.
@@ -38,7 +43,12 @@ public class UploadImage extends AppCompatActivity {
         ivGallery = (ImageView) findViewById(R.id.ivGallery);
         ivUpload = (ImageView) findViewById(R.id.ivUpload);
         cameraPhoto = new CameraPhoto(getApplicationContext());
-
+        try {
+            startActivityForResult(cameraPhoto.takePhotoIntent(), CAMERA_REQUEST);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        cameraPhoto.addToGallery();
         ivCamera.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
@@ -72,6 +82,22 @@ public class UploadImage extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Toast.makeText(getApplicationContext(),"inside onActivityResult", Toast.LENGTH_SHORT).show();
+        if(resultCode == RESULT_OK){
+            Toast.makeText(getApplicationContext(),"result ok ", Toast.LENGTH_SHORT).show();
 
+            if(requestCode == CAMERA_REQUEST){
+                String photoPath = cameraPhoto.getPhotoPath();
+                Toast.makeText(getApplicationContext(),"result :: "+photoPath, Toast.LENGTH_SHORT).show();
+
+                try {
+                    Bitmap bitmap = ImageLoader.init().from(photoPath).requestSize(512, 512).getBitmap();
+                    ivCamera.setImageBitmap(bitmap); //imageView is your ImageView
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }//end if resultCode    }
     }
+
 }

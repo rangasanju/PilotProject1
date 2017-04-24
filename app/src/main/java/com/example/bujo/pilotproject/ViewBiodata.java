@@ -1,5 +1,9 @@
 package com.example.bujo.pilotproject;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
@@ -10,10 +14,11 @@ import android.text.Html;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import static java.lang.Thread.sleep;
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
@@ -35,6 +40,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -70,21 +78,56 @@ public class ViewBiodata extends AppCompatActivity {
         }
         );
 
-        bt = (Button) findViewById(R.id.uploadButton);
-        bt.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View view)
-            {
-                Toast.makeText(getApplicationContext(), "upload pressed", Toast.LENGTH_LONG).show();
+
+
+
+        //for date picker on 21/4/2017
+
+
+       // bt = (Button) findViewById(R.id.uploadButton);
+        //bt.setOnClickListener(new View.OnClickListener()
+       // {
+         //   public void onClick(View view)
+           // {
+          //      Toast.makeText(getApplicationContext(), "upload pressed", Toast.LENGTH_LONG).show();
                 // setContentView(R.layout.camera_gallery_upload);
-                Intent toy = new Intent(ViewBiodata.this, UploadImage.class);
-                startActivity(toy);            }
-        }
-        );
+            //    Intent toy = new Intent(ViewBiodata.this, UploadImage.class);
+              //  startActivity(toy);            }
+        //}
+       // );
 
         EditText etfirstname = (EditText) findViewById(R.id.etfirstname);
         new GetBARequest().execute();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -197,8 +240,6 @@ public class ViewBiodata extends AppCompatActivity {
                         "String retrived:" + res, Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
     private class MyAsyncTask extends AsyncTask<String, Integer, Double> {
 
