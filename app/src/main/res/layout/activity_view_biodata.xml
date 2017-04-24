@@ -148,7 +148,7 @@
 
         <EditText
             android:id="@+id/etoccupation"
-            android:hint="Nationality"
+            android:hint="Occupation"
             android:layout_width="324dp"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"

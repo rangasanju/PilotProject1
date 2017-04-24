@@ -262,11 +262,31 @@ public void setEditable(boolean value, int inputtype)
             HttpPost httppost = new HttpPost(
                     "http://users.aber.ac.uk/bym1/group/androidto.php");
 
+            EditText firstname = (EditText) findViewById(R.id.etfirstname);
+            EditText lastname = (EditText) findViewById(R.id.etlastname);
+            EditText fathersname = (EditText) findViewById(R.id.etfathersname);
+            EditText mothersname  = (EditText) findViewById(R.id.etmothersname);
+            EditText dob = (EditText) findViewById(R.id.etdob);
+            EditText pob = (EditText) findViewById(R.id.etpob);
+            EditText nationality = (EditText) findViewById(R.id.etnationality);
+            EditText occupation = (EditText) findViewById(R.id.etoccupation);
+
+
+
+
             try {
                 // Add your data
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-                nameValuePairs.add(new BasicNameValuePair("firstname",
-                        valueIWantToSend));
+                nameValuePairs.add(new BasicNameValuePair("firstname", firstname.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("lastname",firstname.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("fathersname",fathersname.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("mothersname",mothersname.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("dob",dob.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("pob",pob.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("nationality",nationality.getText().toString()));
+                nameValuePairs.add(new BasicNameValuePair("occupation",occupation.getText().toString()));
+
+
                 httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 
                 // Execute HTTP Post Request
