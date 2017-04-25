@@ -11,7 +11,7 @@
         <menu android:checkableBehavior="single">
             <item
                 android:id="@+id/fillyourbiodata"
-                android:icon="@drawable/ic_teacher"
+                android:icon="@drawable/users"
                 android:title="Biodata">
 
             </item>
@@ -19,14 +19,21 @@
 
             <item
                 android:id="@+id/viewbiodata"
-                android:icon="@mipmap/ic_library_books_black_24dp"
+                android:icon="@drawable/viewdets"
                 android:title="View_Biodata">
 
             </item>
 
             <item
+                android:id="@+id/changePassword"
+                android:icon="@drawable/chngpassword"
+                android:title="Change Password"
+                >
+            </item>
+
+            <item
                 android:id="@+id/logout"
-                android:icon="@drawable/logout"
+                android:icon="@drawable/logout1"
                 android:title="Logout"
                 >
             </item>
@@ -39,19 +46,19 @@
             <item
 
                 android:id="@+id/call_us"
-                android:icon="@drawable/ic_bit_torrent"
+                android:icon="@drawable/callus"
                 android:title="Call_Us"
                 >
             </item>
             <item
                 android:id="@+id/write_us"
-                android:icon="@drawable/ic_beer"
+                android:icon="@drawable/writeus"
                 android:title="Write_Us"
                 >
             </item>
             <item
                 android:id="@+id/chat_us"
-                android:icon="@mipmap/ic_library_books_black_24dp"
+                android:icon="@drawable/chat"
                 android:title="Chat with us"
                 >
             </item>

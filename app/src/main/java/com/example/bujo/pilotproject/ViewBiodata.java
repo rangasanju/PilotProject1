@@ -47,13 +47,14 @@ import java.util.Calendar;
 import java.util.List;
 
 
-public class ViewBiodata extends AppCompatActivity {
+public class ViewBiodata extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
 
     private ProgressBar pb;
     FloatingActionButton fab;
     Button bt;
-
+Calendar calendar = Calendar.getInstance();
+    TextView display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class ViewBiodata extends AppCompatActivity {
 
         //for date picker on 21/4/2017
 
+//display = (TextView) findViewById(R.id.datepicked);
 
        // bt = (Button) findViewById(R.id.uploadButton);
         //bt.setOnClickListener(new View.OnClickListener()
@@ -100,8 +102,38 @@ public class ViewBiodata extends AppCompatActivity {
         setEditable(false,InputType.TYPE_NULL);
         new GetBARequest().execute();
     }
+public void datePicker(View view){
+    //new DatePickerDialog(ViewBiodata.this,listener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH),).show();
+    DatePickerFragment fragment=new DatePickerFragment();
+    fragment.show(getFragmentManager(),"date");
+}
+    private void setDate(final Calendar calendar){
+        final DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
+        ((TextView) findViewById(R.id.etdob)).setText(dateFormat.format(calendar.getTime()));
+    }
 
-public void setEditable(boolean value, int inputtype)
+    public void onDateSet(DatePicker view, int year,int month,int day)
+    {
+        Calendar cal = new GregorianCalendar(year,month,day);
+        setDate(cal);
+    }
+
+    public static class DatePickerFragment extends DialogFragment{
+
+        public Dialog onCreateDialog(Bundle savedInstanceState)
+        {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            return new DatePickerDialog(getActivity(),(DatePickerDialog.OnDateSetListener)getActivity(),year,month,day);
+        }
+    }
+
+
+
+
+    public void setEditable(boolean value, int inputtype)
 {
     EditText etfirstname = (EditText) findViewById(R.id.etfirstname);
     etfirstname.setInputType(inputtype);

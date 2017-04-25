@@ -37,13 +37,14 @@
         app:menu="@menu/menu_main"
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
-        android:theme="@style/NavigationDrawerStyle"
+        app:itemTextAppearance="@style/NavDrawerTextStyle"
 
         >
     </android.support.design.widget.NavigationView>
 </LinearLayout>
 
-<!--
+<!--        android:theme="@style/NavigationDrawerStyle"
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
