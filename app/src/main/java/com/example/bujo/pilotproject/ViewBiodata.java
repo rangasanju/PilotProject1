@@ -3,24 +3,20 @@ package com.example.bujo.pilotproject;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.InputType;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import static java.lang.Thread.sleep;
 import cz.msebera.android.httpclient.HttpEntity;
 import cz.msebera.android.httpclient.HttpResponse;
 import cz.msebera.android.httpclient.NameValuePair;
@@ -53,51 +49,50 @@ public class ViewBiodata extends AppCompatActivity implements DatePickerDialog.O
     private ProgressBar pb;
     FloatingActionButton fab;
     Button bt;
-Calendar calendar = Calendar.getInstance();
-    TextView display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_biodata);
-        //getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+        //to customise toolbar titel and position
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.abs_layout);
 
+        //to add foating button
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener()
+                               {
+                                   @Override
+                                   public void onClick(View v) {
+                                       Toast.makeText(getApplicationContext(),"FAB pressed!:", Toast.LENGTH_SHORT).show();
+                                   }
+                               }
+        );
+
+        //to upload file
+        bt = (Button) findViewById(R.id.uploadChk);
+        bt.setOnClickListener(new View.OnClickListener()
+                              {
+                                  public void onClick(View view)
+                                  {
+                                      Toast.makeText(getApplicationContext(), "upload pressed", Toast.LENGTH_LONG).show();
+                                      //setContentView(R.layout.camera_gallery_upload);
+                                      Intent toy = new Intent(ViewBiodata.this, UploadImage.class);
+                                      startActivity(toy);
+                                  }
+                              }
+        );
         // String myUrl="file://?android_asset/index.html";
         //WebView view = (WebView) this.findViewById(R.id.webView);
         //view.getSettings().setJavaScriptEnabled(true);
         //view.loadUrl(myUrl);
      //  View v = (View)findViewById(R.id.activity_view_biodata);
        //    v.getSettings.setJavaScriptEnabled(true);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"FAB pressed!:", Toast.LENGTH_SHORT).show();
-            }
-        }
-        );
 
 
 
 
-        //for date picker on 21/4/2017
 
-//display = (TextView) findViewById(R.id.datepicked);
-
-       // bt = (Button) findViewById(R.id.uploadButton);
-        //bt.setOnClickListener(new View.OnClickListener()
-       // {
-         //   public void onClick(View view)
-           // {
-          //      Toast.makeText(getApplicationContext(), "upload pressed", Toast.LENGTH_LONG).show();
-                // setContentView(R.layout.camera_gallery_upload);
-            //    Intent toy = new Intent(ViewBiodata.this, UploadImage.class);
-              //  startActivity(toy);            }
-        //}
-       // );
 
         setEditable(false,InputType.TYPE_NULL);
         new GetBARequest().execute();

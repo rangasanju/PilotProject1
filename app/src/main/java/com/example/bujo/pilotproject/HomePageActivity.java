@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomePageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -36,10 +38,15 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/arial.ttf");
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
+       // mDrawerLayout.setTypeface(type);
+        //TextView tv = (TextView) findViewById(R.id.CustomFontText);
+        //tv.setTypeface(tf);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
@@ -77,7 +84,12 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
         } else if (title.equals("Logout")) {
             Intent toy = new Intent(HomePageActivity.this, MainActivity.class);
             startActivity(toy);
-        } else if (title.equals("Write_Us")) {
+        }
+        else if (title.equals("Change_Password")) {
+            Intent toy = new Intent(HomePageActivity.this, ChangePassword.class);
+            startActivity(toy);
+        }
+        else if (title.equals("Write_Us")) {
            // Intent contactIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.email_to), null));
             //contactIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
             //startActivity(Intent.createChooser(contactIntent, getString(R.string.email_chooser)));
@@ -155,23 +167,5 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
     }
 
 
-    public boolean onMenuItemClick(MenuItem item)
-    {
-        Toast.makeText(this," Selected2!",Toast.LENGTH_SHORT).show();
 
-        String title = (String) item.getTitle();
-        Toast.makeText(HomePageActivity.this,title+" Selected!",Toast.LENGTH_SHORT).show();
-        if(title.equals("fillyourbiodata"))
-        {
-            Toast.makeText(HomePageActivity.this,title,Toast.LENGTH_SHORT).show();
-            Intent toy = new Intent(HomePageActivity.this,FillBiodata.class);
-            startActivity(toy);
-        }
-        else if(title.equals("viewbiodata"))
-        {
-            Intent toy = new Intent(HomePageActivity.this,ViewBiodata.class);
-            startActivity(toy);
-        }
-        return true;
-    }
 }

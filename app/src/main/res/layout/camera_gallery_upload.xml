@@ -4,39 +4,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.bujo.pilotproject.UploadImage"><![CDATA[
+    tools:context="com.example.bujo.pilotproject.UploadImage">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imgSelected"
+        android:layout_marginTop="75dp"
+        android:visibility="gone"/>
+<TableRow
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imgSelected"
+    android:layout_marginTop="75dp"
     >
 
 
-
-
-    ]]>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/upload"
-        android:layout_marginEnd="26dp"
-        android:id="@+id/ivUpload"
-        android:layout_alignBottom="@+id/ivGallery"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="17dp" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/gallery"
-        android:layout_marginTop="115dp"
+        android:src="@drawable/gallery"
         android:id="@+id/ivGallery"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@id/imgSelected"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/camera"
+        android:src="@drawable/camera"
         android:id="@+id/ivCamera"
+        android:layout_below="@id/imgSelected"
         android:layout_alignTop="@+id/ivGallery"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="56dp" />
+         />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/upload"
+        android:layout_below="@id/imgSelected"
+        android:id="@+id/ivUpload"
+        />
+
+</TableRow>
 </RelativeLayout>

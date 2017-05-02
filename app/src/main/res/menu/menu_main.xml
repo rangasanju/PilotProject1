@@ -6,28 +6,30 @@
     tools:context=".HomePageActivity">
     <item
         android:id="@+id/group1"
-        android:title="My Account">
+        android:title="My Account"
+        >
 
         <menu android:checkableBehavior="single">
             <item
                 android:id="@+id/fillyourbiodata"
                 android:icon="@drawable/users"
-                android:title="Biodata">
-
+                android:title="Biodata"
+>
             </item>
 
 
             <item
+
                 android:id="@+id/viewbiodata"
                 android:icon="@drawable/viewdets"
-                android:title="View_Biodata">
-
+                android:title="View_Biodata"
+>
             </item>
 
             <item
                 android:id="@+id/changePassword"
                 android:icon="@drawable/chngpassword"
-                android:title="Change Password"
+                android:title="Change_Password"
                 >
             </item>
 

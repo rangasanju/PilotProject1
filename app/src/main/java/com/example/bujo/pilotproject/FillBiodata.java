@@ -21,7 +21,9 @@ public class FillBiodata extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_demo);
        // getSupportActionBar().hide();
-            getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Pilot Book"+"</font>"));
+          //  getSupportActionBar().setTitle(Html.fromHtml("<font color='#e8eaf6'>"+"Biodata"+"</font>"));
+        getSupportActionBar().setDisplayOptions(android.support.v7.app.ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.biodata_home_layout);
 
 
         recyclerView =   (RecyclerView) findViewById(R.id.recycler_view);
