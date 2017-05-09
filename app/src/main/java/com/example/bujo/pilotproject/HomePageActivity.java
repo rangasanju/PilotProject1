@@ -90,9 +90,15 @@ public class HomePageActivity extends AppCompatActivity implements NavigationVie
             startActivity(toy);
         }
         else if (title.equals("Write_Us")) {
-           // Intent contactIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.email_to), null));
-            //contactIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
-            //startActivity(Intent.createChooser(contactIntent, getString(R.string.email_chooser)));
+            Intent contactIntent = new Intent(Intent.ACTION_SEND);//TO, Uri.fromParts("mailto", getString(R.string.email_to), null));
+            contactIntent.putExtra(Intent.EXTRA_EMAIL,new String[]{"abc@yz.com"});//SUBJECT, getString(R.string.email_subject));
+            contactIntent.putExtra(Intent.EXTRA_CC,new String[]{"lmn@yz.com"});//startActivity(Intent.createChooser(contactIntent, getString(R.string.email_chooser)));
+            contactIntent.putExtra(Intent.EXTRA_SUBJECT,"Subject");
+            contactIntent.putExtra(Intent.EXTRA_TEXT,"Body");
+            contactIntent.setType("message/rfc822");//putExtra(Intent.EXTRA_SUBJECT,"Subject");
+            startActivity(Intent.createChooser(contactIntent,"Choose email client..."));
+
+
         } else if (title.equals("Call_Us")) {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:+918130994198"));
